@@ -1,0 +1,46 @@
+﻿{
+    "Goalkeeper": {
+        "en": "Goalkeeper",
+        "es": "Portero",
+        "it": "Portiere",
+        "nl": "Doelman",
+        "pt-br": "Goleiro",
+        "ro": "Portar",
+        "sl": "Vratar",
+        "tr": "Kaleci",
+        "ko": "골키퍼"
+    },
+    "Defender": {
+        "en": "Defender",
+        "es": "Defensor",
+        "it": "Difensore",
+        "nl": "Verdediger",
+        "pt-br": "Defensor",
+        "ro": "Fundaș",
+        "sl": "Branilec",
+        "tr": "Defans",
+        "ko": "수비수"
+    },
+    "Midfielder": {
+        "en": "Midfielder",
+        "es": "Centrocampista",
+        "it": "Centrocampista",
+        "nl": "Middenvelder",
+        "pt-br": "Meio-campista",
+        "ro": "Mijlocaș",
+        "sl": "Vezist",
+        "tr": "Orta saha",
+        "ko": "미드필더"
+    },
+    "Forward": {
+        "en": "Forward",
+        "es": "Delantero",
+        "it": "Attaccante",
+        "nl": "Aanvaller",
+        "pt-br": "Atacante",
+        "ro": "Atacant",
+        "sl": "Napadalec",
+        "tr": "Forvet",
+        "ko": "공격수"
+    }
+}
