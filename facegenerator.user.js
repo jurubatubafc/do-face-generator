@@ -9,8 +9,8 @@
 // @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
-// @downloadURL  https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
-// @updateURL    https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
+// @downloadURL  https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
+// @updateURL    https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
 // ==/UserScript==
 
 (async function() {
