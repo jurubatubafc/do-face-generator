@@ -9,8 +9,8 @@
 // @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
-// @downloadURL  https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
-// @updateURL    https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
+// @downloadURL  https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
+// @updateURL    https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
 // ==/UserScript==
 
 (async function() {
@@ -634,13 +634,26 @@
 
     // Select the image element based on the provided src attribute and replace it for the one wanted
     var imgElement = document.querySelector('img[src="https://www.dugout-online.com/images/club/profile/player-pic-default.png"]');
+    imgElement.style.zIndex = '1';
+
     if (imgElement) {
-        // Replace the image source with the desired URL
-        imgElement.src = 'https://github.com/jurubatubafc/do-face-generator/blob/main/face-db/'+ mapToAgeRange(removeNonNumeric(dynamicAge)) + '-' + ToEnglish(divCountryImg.find('img').attr('title'), countryCorrelation) + '-' + ToEnglish(dynamicPos, positionCorrelation) +'.jpg?raw=true';
-        // Set the width and height of the image
-        imgElement.width = 150;
-        imgElement.height = 150;
-        imgElement.style.objectFit = 'cover';
+        // Replace the image source with the desired URL and create consts
+        const generatedFace = document.createElement('img');
+        imgElement.style.position = 'absolute';
+        imgElement.style.left = '0';
+        const paddingTopValue = '8px';
+        const paddingLeftValue = '13px';
+        generatedFace.src = 'https://github.com/jurubatubafc/do-face-generator/blob/main/face-db/'+ mapToAgeRange(removeNonNumeric(dynamicAge)) + '-' + ToEnglish(divCountryImg.find('img').attr('title'), countryCorrelation) + '-' + ToEnglish(dynamicPos, positionCorrelation) +'.jpg?raw=true';
+
+        // Set the position, width and height of the image - also sets up the default message to get behind the new image
+        generatedFace.style.position = 'absolute';
+        generatedFace.style.paddingTop = paddingTopValue;
+        generatedFace.style.paddingLeft = paddingLeftValue;
+        generatedFace.width = 122;
+        generatedFace.height = 122;
+        generatedFace.style.zIndex = '2';
+        generatedFace.style.left = '0';
+        imgElement.parentNode.appendChild(generatedFace);
     }
 
 })();
