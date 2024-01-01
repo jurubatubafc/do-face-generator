@@ -4,7 +4,7 @@
 // @version      v1.0
 // @description  Players Face Pictures Generated Via AI
 // @author       Jurubatuba FC (Luis Scalise)
-// @match        https://www.dugout-online.com/players/details/youth/*
+// @match        https://www.dugout-online.com/players/details/*
 // @grant        GM_openInTab
 // @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
