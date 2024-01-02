@@ -9,8 +9,8 @@
 // @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
-// @downloadURL  https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
-// @updateURL    https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
+// @downloadURL  https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
+// @updateURL    https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
 // ==/UserScript==
 
 (async function() {
@@ -645,7 +645,7 @@
         const paddingLeftValue = '13px';
         generatedFace.src = 'https://github.com/jurubatubafc/do-face-generator/blob/main/face-db/'+ mapToAgeRange(removeNonNumeric(dynamicAge)) + '-' + ToEnglish(divCountryImg.find('img').attr('title'), countryCorrelation) + '-' + ToEnglish(dynamicPos, positionCorrelation) +'.jpg?raw=true';
 
-        // Set the position, width and height of the image - also sets up the default message to get behind the new image
+        // Set the position, width and height of the image - also sets up the default image to get behind the new image
         generatedFace.style.position = 'absolute';
         generatedFace.style.paddingTop = paddingTopValue;
         generatedFace.style.paddingLeft = paddingLeftValue;
