@@ -9,8 +9,8 @@
 // @grant        unsafeWindow
 // @grant        GM_xmlhttpRequest
 // @grant        GM_addStyle
-// @downloadURL  https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
-// @updateURL    https://github.com/jurubatubafc/do-face-generator/raw/main/facegenerator.user.js
+// @downloadURL  https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
+// @updateURL    https://github.com/jurubatubafc/do-face-generator/blob/main/facegenerator.user.js
 // ==/UserScript==
 
 (async function() {
@@ -62,6 +62,12 @@
         .next() // Move to the third tr
         .find('td:last-child') // Find the last td within the third tr
         .text();
+
+    // Find the div with the class "player_name"
+    var playerDiv = document.querySelector('.player_name');
+
+    // Get the first letter of the description in lowercase
+    var firstLetter = playerDiv ? playerDiv.textContent.trim().charAt(0).toLowerCase() : 'a'; // 'a' if not found
 
     // Array of players position correlations
     var positionCorrelation = [
@@ -643,9 +649,9 @@
         imgElement.style.left = '0';
         const paddingTopValue = '8px';
         const paddingLeftValue = '13px';
-        generatedFace.src = 'https://github.com/jurubatubafc/do-face-generator/blob/main/face-db/'+ mapToAgeRange(removeNonNumeric(dynamicAge)) + '-' + ToEnglish(divCountryImg.find('img').attr('title'), countryCorrelation) + '-' + ToEnglish(dynamicPos, positionCorrelation) +'.jpg?raw=true';
+        generatedFace.src = 'https://github.com/jurubatubafc/do-face-generator/blob/main/face-db/'+ mapToAgeRange(removeNonNumeric(dynamicAge)) + '-' + ToEnglish(divCountryImg.find('img').attr('title'), countryCorrelation) + '-' + ToEnglish(dynamicPos, positionCorrelation) + '-' + firstLetter +'.jpg?raw=true';
 
-        // Set the position, width and height of the image - also sets up the default image to get behind the new image
+        // Set the position, width and height of the image - also sets up the default message to get behind the new image
         generatedFace.style.position = 'absolute';
         generatedFace.style.paddingTop = paddingTopValue;
         generatedFace.style.paddingLeft = paddingLeftValue;
